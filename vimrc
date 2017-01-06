@@ -42,6 +42,10 @@ set ttyfast
 " set ttyscroll=3               " noop on linux ?
 set lazyredraw          	      " Wait to redraw "
 
+" Show hidden characters
+set list
+set listchars=tab:⇾\ ,trail:·,nbsp:␣
+
 " speed up syntax highlighting
 set nocursorcolumn
 set nocursorline
@@ -71,8 +75,8 @@ set showmatch
 set smarttab
 
 set et
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 
 set nrformats-=octal
@@ -353,6 +357,9 @@ autocmd FileType gitconfig,sh,toml set noexpandtab
 
 " python indent
 autocmd BufNewFile,BufRead *.py setlocal tabstop=4 softtabstop=4 shiftwidth=4 textwidth=80 smarttab expandtab
+
+" ruby indent
+autocmd BufNewFile,BufRead *.rb setlocal tabstop=2 softtabstop=2 shiftwidth=2 textwidth=110 smarttab expandtab
 
 " toml settings
 au BufRead,BufNewFile MAINTAINERS set ft=toml
